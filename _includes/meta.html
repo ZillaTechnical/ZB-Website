@@ -1,0 +1,63 @@
+{% if page.title %}
+    <title>{{ page.title }}</title>
+{% else %}
+    <title>{{ site.title }}</title>
+{% endif %}
+
+<meta charset="utf-8">
+{% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+{% else %}
+    <meta name="description" content="{{ site.description }}">
+{% endif %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-itunes-app" content="app-id={{ site.app_store_id }}">
+
+{% if page.og_image %}
+    {% assign og_image = page.og_image %}
+{% else %}
+    {% assign og_image = "/media/Zillabooth 1.5 Screenshot 1.jpeg" %}
+{% endif %}
+
+{% if page.og_url %}
+    {% assign og_url = page.og_url %}
+{% else %}
+    {% assign og_url = site.url | append: page.url %}
+{% endif %}
+
+{% if page.og_title %}
+    {% assign og_title = page.og_title %}
+{% elsif page.title %}
+    {% assign og_title = page.title %}
+{% else %}
+    {% assign og_title = site.title %}
+{% endif %}
+
+{% if page.og_description %}
+    {% assign og_description = page.og_description %}
+{% elsif page.description %}
+    {% assign og_description = page.description %}
+{% else %}
+    {% assign og_description = site.description %}
+{% endif %}
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ og_url }}">
+<meta property="og:title" content="{{ og_title }}">
+<meta property="og:description" content="{{ og_description }}">
+<meta property="og:image" content="{{ site.url }}{{ og_image }}">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ og_url }}">
+<meta property="twitter:title" content="{{ og_title }}">
+<meta property="twitter:description" content="{{ og_description }}">
+<meta property="twitter:image" content="{{ site.url }}{{ og_image }}">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ og_url }}">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="{{ '/media/favicon.ico' | relative_url }}">
+

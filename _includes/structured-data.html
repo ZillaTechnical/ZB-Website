@@ -1,0 +1,6 @@
+{% if page.structured_data %}
+<script type="application/ld+json">
+{{ page.structured_data | jsonify }}
+</script>
+{% endif %}
+
