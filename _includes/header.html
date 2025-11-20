@@ -1,13 +1,11 @@
 <header>
-  <div class="container">
-    <h1><a href="{{ '/' | relative_url }}">ZillaBooth</a></h1>
-    {% if page.tagline %}
-      <p class="tagline">{{ page.tagline }}</p>
-    {% elsif layout.tagline %}
-      <p class="tagline">{{ layout.tagline }}</p>
-    {% else %}
-      <p class="tagline">The FREE Simple Photo Booth App for Your Pocket, Parties, and DIY Events. ZillaBooth Pro adds advanced features.</p>
-    {% endif %}
-  </div>
+  <h1><a href="{{ '/' | relative_url }}">ZillaBooth</a></h1>
+  {% if page.tagline %}
+    <p class="tagline">{{ page.tagline }}</p>
+  {% elsif layout.tagline %}
+    <p class="tagline">{{ layout.tagline }}</p>
+  {% else %}
+    <p class="tagline">The FREE Simple Photo Booth App for Your Pocket, Parties, and DIY Events. ZillaBooth Pro adds advanced features.</p>
+  {% endif %}
 </header>
 
